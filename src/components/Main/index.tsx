@@ -22,6 +22,10 @@ export const Main: React.FC = (props) => {
         // navigation.push('/login')
         getUser({ variables: { userId: cookies["user-id"] } });
       }
+    }else{
+      if(location.pathname === '/'){
+        navigation.push('/content')
+      }
     }
   }, [location.pathname, authenticating]);
 
