@@ -6,6 +6,7 @@ const LoginWrapper = styled.div`${() => css`
     align-items: center;
     background-color: #92aab0;
     flex-grow: 1;
+    flex-direction: column
 `}`
 
 export default LoginWrapper
