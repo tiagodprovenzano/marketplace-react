@@ -1,9 +1,10 @@
 import React from "react";
 import ContentContainerWrapper from "./content-container.styled";
 
-const ContentContainerView = () => (
+
+const ContentContainerView: React.FC = (props) => (
   <ContentContainerWrapper>
-    <div>ContentContainerWrapper</div>
+    {props.children}
   </ContentContainerWrapper>
 );
 

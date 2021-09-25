@@ -4,6 +4,7 @@ import { SideMenu } from "../SideMenu";
 import MainViewWrapper from "./main.styled";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Login } from "../../screens/Login";
+import MainLoader from "../MainLoader";
 
 type Props = {
     /**
@@ -19,7 +20,12 @@ const MainView: React.FC<Props> = (props) => (
         <Route path={"/login"} component={Login} />
         <Route path={"/"}>
             {props.authenticating? 
-                <div>loading</div> : 
+
+                (
+                  <ContentContainer>
+                    <MainLoader />
+                  </ContentContainer>
+                ) : 
             (
                 <>
                     <SideMenu />
