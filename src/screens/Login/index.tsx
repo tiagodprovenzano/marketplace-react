@@ -1,7 +1,8 @@
 import { useMutation, useQuery } from "@apollo/client";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { useHistory } from "react-router";
+import { AuthContext } from "../../contexts/AuthContext";
 import LoginView from "./login.view";
 import { LOGIN_QUERY } from "./services/login.mutation";
 
@@ -10,6 +11,7 @@ export const Login = () => {
   const [password, setPassword] = useState<string>("");
   const [cookies, setCookies] = useCookies(['email', 'password', 'token', 'user-id']) 
   const [login] = useMutation(LOGIN_QUERY)
+  const auth = useContext(AuthContext)
   const navigation = useHistory()
   useEffect(() => {
     if(cookies.email){
@@ -35,6 +37,7 @@ export const Login = () => {
       console.log('apos o  login', value);
       if(value?.data?.login){
         const { token, id} = value.data.login
+        auth.setUser(value.data.login)
         if(token){
           setCookies('token', token)
           localStorage.setItem('token', token)

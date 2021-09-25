@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 const ContentContainerWrapper = styled.div`${() => css`
     display: flex;
-    background-color: red;
+    background-color: #eaecec;
     flex-grow: 1;
 `}`
 
