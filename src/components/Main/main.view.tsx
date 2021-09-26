@@ -5,6 +5,7 @@ import MainViewWrapper from "./main.styled";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { Login } from "../../screens/Login";
 import MainLoader from "../MainLoader";
+import { Stores } from "../../screens/Stores";
 
 type Props = {
     /**
@@ -31,6 +32,11 @@ const MainView: React.FC<Props> = (props) => (
                     <SideMenu />
                     <Route path={"/content"}>
                         <ContentContainer />
+                    </Route>
+                    <Route path={"/stores"}>
+                        <ContentContainer>
+                          <Stores />
+                        </ContentContainer>
                     </Route>
                 </>
             )

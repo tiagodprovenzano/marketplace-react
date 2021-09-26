@@ -8,6 +8,8 @@ const SideMenuWrapper = styled.div`${() => css`
     min-width: 150px;
     .side-menu-links{
         flex-grow: 1;
+        display: flex;
+        flex-direction: column;
     }
 `}`
 

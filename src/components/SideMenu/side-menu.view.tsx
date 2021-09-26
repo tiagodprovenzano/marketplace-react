@@ -10,7 +10,7 @@ type Props = {
 const SideMenuView: React.FC<Props> = (props) => (
   <SideMenuWrapper>
     <div className={'side-menu-links'}>
-      <div>Menu</div>
+      <Link to="/stores">Stores</Link>
       <Link to="/content">Content</Link>
     </div>
     <Button label={"Logout"} onClick={props.onLogout} />
