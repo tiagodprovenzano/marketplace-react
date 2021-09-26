@@ -2,7 +2,7 @@ import React from "react";
 import { ContentContainer } from "../ContentContainer";
 import { SideMenu } from "../SideMenu";
 import MainViewWrapper from "./main.styled";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { Login } from "../../screens/Login";
 import MainLoader from "../MainLoader";
 import { Stores } from "../../screens/Stores";
