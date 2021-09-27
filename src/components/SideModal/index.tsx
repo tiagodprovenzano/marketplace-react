@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { SideModalView } from './side-modal.view';
 
 type Props = {
@@ -8,14 +8,24 @@ type Props = {
 
 export const SideModal: React.FC<Props> = props => {
   const { show, setShow } = props;
-
+  const [leave, setLeave] = useState(false);
   const onClickCloseModal = useCallback(() => {
-    setShow(false)
-  }, [setShow])
+    setLeave(true)
+  }, [setLeave])
+
+  useEffect(() => {
+    if(leave){
+      setTimeout(() => {
+        setShow(false)
+        setLeave(false)
+      }, 180)
+    }
+  }, [leave, setShow])
 
   return (
     <SideModalView
       show={show}
+      leave={leave}
       onClickCloseModal={onClickCloseModal}
     >
       {props.children}
