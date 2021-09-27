@@ -8,7 +8,9 @@ type Props = {
 
 export const SideModalView:React.FC<Props> = (props) => (
   <SideModalWrapper hidden={!props.show}>
-      <div className={'modal-content-wrapper'}>Modal top</div>
+      <div className={'modal-content-wrapper'}>
+        {props.children}
+      </div>
       <div onClick={props.onClickCloseModal} className={'modal-content-outer'} />
   </SideModalWrapper>
 );

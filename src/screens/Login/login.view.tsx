@@ -15,11 +15,13 @@ const LoginView: React.FC<Props> = (props) => (
   <LoginWrapper>
     <TextInput
       type={"email"}
+      placeholder={"Email"}
       onChangeText={props.onChangeEmail}
       text={props.email}
-    />
+      />
     <TextInput
       type={"password"}
+      placeholder={"Senha"}
       onChangeText={props.onChangePassword}
       text={props.password}
     />

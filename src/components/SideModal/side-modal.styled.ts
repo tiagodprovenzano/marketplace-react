@@ -9,10 +9,11 @@ export const SideModalWrapper = styled.div`
     bottom: 0;
     display: ${props.hidden? 'none':'flex'};
     flex-direction: row-reverse;
-    
     .modal-content-wrapper {
       opacity: 1;
       width: 35vw;
+      display: flex;
+      flex-direction: column;
     }
 
     .modal-content-outer {

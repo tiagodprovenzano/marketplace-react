@@ -1,19 +1,20 @@
 import React from 'react';
 import { Button } from '../../components/Button';
-import { SideModal } from '../../components/SideModal';
+import { IStore } from '../../types/IStore';
+import { AddNewStore } from './components/AddNewStore';
+import { StoresWrapper } from './stores.styled';
 
 type Props = {
-  show: boolean;
-  onClickCreateStore: () => void
-  onClickCloseModal: () => void
-}
+  stores: IStore[]
+};
 
-export const StoresView: React.FC<Props> = (props) => (
-  <div>
-    <SideModal onClickCloseModal={props.onClickCloseModal} show={props.show}/>
-    <Button
-      label={'New Store'}
-      onClick={props.onClickCreateStore}
-    />
-  </div>
+export const StoresView: React.FC<Props> = props => (
+  <StoresWrapper>
+    <AddNewStore />
+    <div>
+      {props.stores.map((store) => {
+        return <div>{store.name}</div>
+      })}
+    </div>
+  </StoresWrapper>
 );
