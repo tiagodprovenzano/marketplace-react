@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '../../components/Button';
 import { IStore } from '../../types/IStore';
 import { AddNewStore } from './components/AddNewStore';
 import { StoresWrapper } from './stores.styled';
